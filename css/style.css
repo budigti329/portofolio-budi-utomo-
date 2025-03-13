@@ -1966,11 +1966,11 @@ a:focus {
 
 /* Jarak antar section */
 #portfolio-section-1 {
-    margin-bottom: 150px; /* Default untuk layar besar */
+    margin-bottom: 125px; /* Default untuk layar besar */
 }
 
 #portfolio-section-2 {
-    padding-top: 150px; /* Default untuk layar besar */
+    padding-top: 125px; /* Default untuk layar besar */
 }
 
 /* Responsif untuk tablet */
