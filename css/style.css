@@ -902,7 +902,7 @@ a:focus {
 
 .portfolio .portfolio-wrap {
     position: relative;
-    width: 100%;
+    max-width: 100%;
 }
 
 .portfolio .portfolio-img {
@@ -918,6 +918,14 @@ a:focus {
     transform: scale(1.1);
     transition: .5s;
 }
+
+.portfolio-wrap img {
+    max-width: 100%; /* Agar gambar tidak melebihi container */
+    height: auto; /* Memastikan aspek rasio tetap terjaga */
+    object-fit: cover; /* Menjaga gambar tetap proporsional */
+    border-radius: 10px; /* Memberi sudut membulat agar lebih rapi */
+}
+
 
 .portfolio .portfolio-item:hover img {
     margin-left: 15px;
@@ -941,6 +949,28 @@ a:focus {
     margin: 0 0 0 15px;
     white-space: nowrap;
     overflow: hidden;
+}
+
+.portfolio-text h3 {
+    font-size: 15px; /* Ukuran default */
+    font-weight: bold; /* Tebalkan teks */
+    text-align: left; /* Posisikan teks di tengah */
+    margin-bottom: 20px; /* Tambahkan jarak ke bawah */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 768px) {
+    .portfolio-text h3 {
+        font-size: 18px;
+        margin-bottom: 8px; /* Sesuaikan jarak untuk layar kecil */
+    }
+}
+
+@media (max-width: 480px) {
+    .portfolio-text h3 {
+        font-size: 16px;
+        margin-bottom: 6px; /* Lebih kecil di layar HP */
+    }
 }
 
 .portfolio .portfolio-text a.btn {
@@ -1789,6 +1819,18 @@ a:focus {
 
 .back-link:hover h2::before {
     transform: scaleX(1); /* Munculkan underline */
+}
+
+.portfolio-section {
+    padding: 50px 0; /* Memberi ruang atas dan bawah di setiap section */
+}
+
+#portfolio-section-1 {
+    margin-bottom: 50px; /* Menambah jarak di bawah section pertama */
+}
+
+#portfolio-section-2 {
+    padding-top: 50px; /* Menambah ruang di atas section kedua */
 }
 
 /*******************************/
