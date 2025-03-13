@@ -423,14 +423,35 @@ a:focus {
     left: 0;
     width: 100%;
     height: auto;
-    transform: translateY(-35px); /* Naikkan nilai ini untuk lebih tinggi */
+    transform: translateY(-35px); /* Default untuk layar besar */
 }
-
 
 .wave svg {
     display: block;
     width: 100%;
-    height: 100px; /* Atur tinggi sesuai keinginan */
+    height: 100px; /* Default untuk layar besar */
+}
+
+/* Responsif untuk tablet */
+@media (max-width: 1024px) {
+    .wave {
+        transform: translateY(-20px); /* Sesuaikan tinggi gelombang */
+    }
+
+    .wave svg {
+        height: 80px; /* Sesuaikan tinggi untuk tablet */
+    }
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+    .wave {
+        transform: translateY(-10px); /* Kurangi tinggi agar lebih pas */
+    }
+
+    .wave svg {
+        height: 60px; /* Kurangi tinggi wave di mobile */
+    }
 }
 
 
@@ -705,12 +726,29 @@ a:focus {
 }
 
 .experience .timeline .timeline-text img {
-    width: 400px;  /* Atur ukuran lebih besar */
+    width: 400px;  /* Ukuran default untuk layar besar */
     height: auto; /* Biarkan tinggi mengikuti proporsi */
-    border-radius: 10px; /* Supaya sedikit membulat, tapi tidak lingkaran penuh */
+    border-radius: 10px; /* Supaya sedikit membulat */
     display: block;
     margin: 0 auto 10px;
+    max-width: 100%; /* Supaya gambar tidak melebihi kontainer */
 }
+
+/* Untuk layar tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .experience .timeline .timeline-text img {
+        width: 300px; /* Perkecil gambar */
+    }
+}
+
+/* Untuk layar mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .experience .timeline .timeline-text img {
+        width: 100%; /* Gunakan lebar penuh agar menyesuaikan layar */
+        max-width: 250px; /* Batasi agar tidak terlalu besar */
+    }
+}
+
 
 .experience-box {
     border: 2px solid #333; /* Warna garis */
@@ -1352,18 +1390,43 @@ a:focus {
     text-align: center;
 }
 
+/* Bagian gambar testimonial */
 .testimonial .testimonial-img {
     position: relative;
     margin-bottom: 15px;
     z-index: 1;
 }
 
+/* Gambar testimonial */
 .testimonial .testimonial-item img {
-    width: 200px; /* Sesuaikan ukuran gambar */
+    width: 200px; /* Ukuran default untuk layar besar */
     height: 200px;
     object-fit: cover;
     border-radius: 10px;
+    max-width: 100%; /* Pastikan gambar tidak melebihi kontainer */
 }
+
+/* Responsif untuk tablet */
+@media (max-width: 1024px) {
+    .testimonial .testimonial-item img {
+        width: 150px; /* Perkecil ukuran gambar */
+        height: 150px;
+    }
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+    .testimonial .testimonial-item {
+        margin: 0 10px; /* Kurangi margin agar lebih pas */
+    }
+
+    .testimonial .testimonial-item img {
+        width: 120px; /* Perkecil lagi untuk mobile */
+        height: 120px;
+        border-radius: 8px; /* Sedikit lebih kecil agar lebih cocok di layar kecil */
+    }
+}
+
 
 
 .testimonial .testimonial-text {
@@ -1603,7 +1666,6 @@ a:focus {
     justify-content: center;
 }
 
-
 /* Bagian kiri (Foto + Job Title) */
 .profile-left {
     display: flex;
@@ -1621,7 +1683,7 @@ a:focus {
 }
 
 .profile-img:hover {
-    transform: scale(1.1); /* Perbesar gambar saat hover */
+    transform: scale(1.1);
 }
 
 .profile-img img {
@@ -1630,11 +1692,9 @@ a:focus {
     object-fit: cover;
     border: 4px dashed black;
     border-radius: 10px;
-    padding: 8px; /* Memberikan jarak antara gambar dan border */
-    background-color: white; /* Opsional: Mengisi area padding agar tidak transparan */
+    padding: 8px;
+    background-color: white;
 }
-
-
 
 .job-title {
     font-size: 20px;
@@ -1647,12 +1707,9 @@ a:focus {
 .profile-info {
     flex-grow: 1;
     padding: 0 20px;
-    max-width: 500px; /* Batasi lebar teks */
-    text-align: left; /* Tetap rata kiri */
+    max-width: 500px;
+    text-align: left;
 }
-
-
-
 
 .profile-info h2 {
     margin: 0 0 15px 0;
@@ -1662,28 +1719,86 @@ a:focus {
 .profile-details {
     display: flex;
     flex-direction: column;
-    gap: 12px; /* Jarak antar data */
+    gap: 12px;
     max-width: 100%;
 }
 
-
 .profile-details p {
-    margin: 4px 0; /* Mengurangi margin agar lebih rapat */
-    padding: 3px 0; /* Mengurangi padding agar tidak terlalu jauh */
+    margin: 4px 0;
+    padding: 3px 0;
     font-size: 15px;
     color: #000000;
     display: flex;
-    align-items: center; /* Agar teks tetap sejajar */
+    align-items: center;
     border-bottom: 1px solid #000000;
 }
 
 .profile-row {
     display: flex;
     align-items: center;
-    gap: 10px; /* Jarak antara label dan isi */
+    gap: 10px;
     padding: 10px 0;
-    border-bottom: 1px solid #000000; /* Garis pembatas */
+    border-bottom: 1px solid #000000;
 }
+
+/* RESPONSIVE DESIGN */
+
+/* Untuk layar tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .profile-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-info {
+        padding: 0 10px;
+        max-width: 80%;
+        text-align: center;
+    }
+
+    .profile-details p {
+        justify-content: center; /* Agar teks tetap rata tengah */
+    }
+
+    .profile-row {
+        justify-content: center;
+    }
+}
+
+/* Untuk layar mobile (max-width: 768px) */
+@media (max-width: 768px) {
+    .profile-box {
+        flex-direction: column;
+        gap: 15px;
+        padding-bottom: 15px;
+    }
+
+    .profile-img {
+        width: 150px; /* Perkecil gambar di layar kecil */
+        height: 150px;
+    }
+
+    .profile-info {
+        max-width: 100%;
+        padding: 0 10px;
+        text-align: center;
+    }
+
+    .profile-info h2 {
+        font-size: 20px; /* Perkecil ukuran judul */
+    }
+
+    .profile-details p {
+        font-size: 14px; /* Sesuaikan font untuk layar kecil */
+        padding: 2px 0;
+    }
+
+    .profile-row {
+        flex-direction: column; /* Susun vertikal untuk layar kecil */
+        text-align: center;
+    }
+}
+
 
 
 .row:last-child {
@@ -1822,15 +1937,42 @@ a:focus {
 }
 
 .portfolio-section {
-    padding: 50px 0; /* Memberi ruang atas dan bawah di setiap section */
+    padding: 50px 0; /* Ruang atas dan bawah di setiap section */
 }
 
+/* Jarak antar section */
 #portfolio-section-1 {
-    margin-bottom: 130px; /* Menambah jarak di bawah section pertama */
+    margin-bottom: 150px; /* Default untuk layar besar */
 }
 
 #portfolio-section-2 {
-    padding-top: 130px; /* Menambah ruang di atas section kedua */
+    padding-top: 150px; /* Default untuk layar besar */
+}
+
+/* Responsif untuk tablet */
+@media (max-width: 1024px) {
+    #portfolio-section-1 {
+        margin-bottom: 100px; /* Kurangi jarak agar tidak terlalu besar */
+    }
+
+    #portfolio-section-2 {
+        padding-top: 100px;
+    }
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 768px) {
+    .portfolio-section {
+        padding: 30px 0; /* Kurangi padding di layar kecil */
+    }
+
+    #portfolio-section-1 {
+        margin-bottom: 50px; /* Kurangi jarak antar section */
+    }
+
+    #portfolio-section-2 {
+        padding-top: 50px; /* Kurangi padding atas */
+    }
 }
 
 /*******************************/
@@ -1963,4 +2105,3 @@ a:focus {
         padding: 0 5px;
     }
 }
-
